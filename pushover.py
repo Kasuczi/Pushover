@@ -32,6 +32,10 @@ class PushoverNotifier:
         response = self.conn.getresponse()
         return response.read()
 
+    def format_message(data):
+        return "\n".join(f"{key} {value}" for key, value in data.items()) + "\n\n"
+
+
 
 if __name__ == "__main__":
     app_token = ""
